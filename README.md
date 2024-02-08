@@ -1,4 +1,4 @@
-#Deployed Link: 
+Deployed Link: 
 https://poki-men.vercel.app/
 
 # React + TypeScript + Vite
