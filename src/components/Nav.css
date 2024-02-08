@@ -1,0 +1,75 @@
+* {
+  font-family: "Ubuntu";
+  margin: 0;
+  color: white;
+}
+@keyframes logoAnimation {
+  0% {
+    left: 100px;
+    top: 20px;
+  }
+  50% {
+    left: -100px;
+    top: -20px;
+  }
+  100% {
+    left: 100px;
+    top: 20px;
+  }
+}
+#top-nav {
+  /* animation: logoAnimation infinite forwards 2s; */
+
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  height: 90px;
+  background-color: black;
+  z-index: 1;
+  #logo-h1 {
+    background-color: black;
+    font-family: "Protest Riot";
+    font-size: xx-large;
+    position: relative;
+  }
+  #menu-div {
+    /* z-index: 3; */
+    background-color: black;
+    display: flex;
+    /* border: solid red; */
+    position: fixed;
+    left: 20px;
+    /* top: -5px; */
+    margin-left: 10px;
+
+    h1 {
+      font-size: xx-large;
+      margin-left: 5px;
+      background-color: black;
+    }
+    img {
+      background-color: black;
+    }
+  }
+}
+#side-nav {
+  position: fixed;
+  top: 95px;
+  display: flex;
+  border: solid;
+  border-top: 0;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  padding: 10px 0;
+  background-color: black;
+  h1 {
+    display: inline;
+    background-color: black;
+    font-size: x-large;
+    margin: 20px 0;
+  }
+}
