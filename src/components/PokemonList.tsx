@@ -13,18 +13,14 @@ const PokemonList = () => {
         <p style={{ color: "hotpink" }}>SpA</p>
         <p style={{ color: "cyan" }}>SpD</p>
         <p style={{ color: "yellow" }}>Speed</p>
-        <p style={{ paddingLeft: 10, borderRadius: 20, color: "white" }}>
-          Sum
-        </p>
+        <p style={{ paddingLeft: 10, borderRadius: 20, color: "white" }}>Sum</p>
       </div>
       {pokemonList.map((obj) => {
         return (
           <Link
             to={`/pokemon/${obj.id}`}
             className="list-item"
-            onMouseEnter={() => {
-              new Audio(cartoonJumpMp3).play();
-            }}
+            onMouseEnter={() => new Audio(cartoonJumpMp3).play()}
           >
             <p className="name-id">
               {obj.id + "." + obj.name[0].toUpperCase() + obj.name.slice(1)}

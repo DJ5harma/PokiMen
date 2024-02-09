@@ -23,7 +23,6 @@ const Nav = () => {
           justifyContent: "center",
           alignItems: "center",
           height: 100,
-          // border: "solid",
         }}
       >
         <h1
