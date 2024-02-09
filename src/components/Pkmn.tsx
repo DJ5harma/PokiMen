@@ -4,7 +4,7 @@ import DB from "../assets/pokemonDB.json";
 
 import cartoonJumpMp3 from "../assets/cartoon-jump.mp3";
 import speakerIconImg from "../assets/speaker-icon.png";
-import Stats from "./Stats";
+// import Stats from "./Stats";
 
 const Pkmn = () => {
   const id = parseInt(useLocation().pathname.slice(9));
@@ -20,6 +20,46 @@ const Pkmn = () => {
   const dbNext = DB[id];
   const dbCurr = DB[id - 1];
   const dbPrev = DB[id - 2];
+  const Stats = () => {
+    return (
+      <div id="stat-div">
+        <div className="stat">
+          <p>HP</p>
+          <p>{dbCurr.stats.hp}</p>
+        </div>
+        <div className="stat">
+          <p>Atk</p>
+          <p>{dbCurr.stats.attack}</p>
+        </div>
+        <div className="stat">
+          <p>Def</p>
+          <p>{dbCurr.stats.defense}</p>
+        </div>
+        <div className="stat">
+          <p>SpA</p>
+          <p>{dbCurr.stats["special-attack"]}</p>
+        </div>
+        <div className="stat">
+          <p>SpD</p>
+          <p>{dbCurr.stats["special-defense"]}</p>
+        </div>
+        <div className="stat">
+          <p>Speed</p>
+          <p>{dbCurr.stats.speed}</p>
+        </div>
+        <div className="stat">
+          <b>Total</b>
+          <b>
+            {dbCurr.stats.hp +
+              dbCurr.stats.attack +
+              dbCurr.stats.defense +
+              dbCurr.stats["special-attack"] +
+              dbCurr.stats["special-defense"]}
+          </b>
+        </div>
+      </div>
+    );
+  };
 
   useEffect(() => {
     audioCry.play();
@@ -68,7 +108,7 @@ const Pkmn = () => {
             </button>
           )}
         </div>
-        <Stats dbCurr={dbCurr} />
+        <Stats />
       </div>
       {id < 1302 && (
         <Link
