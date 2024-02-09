@@ -6,6 +6,17 @@ import cartoonJumpMp3 from "../assets/cartoon-jump.mp3";
 const PokemonList = () => {
   return (
     <div id="list-div">
+      <div id="stat-ref-tab">
+        <p style={{ color: "pink" }}>HP</p>
+        <p style={{ color: "orange" }}>Atk</p>
+        <p style={{ color: "chartreuse" }}>Def</p>
+        <p style={{ color: "hotpink" }}>SpA</p>
+        <p style={{ color: "cyan" }}>SpD</p>
+        <p style={{ color: "yellow" }}>Speed</p>
+        <p style={{ paddingLeft: 10, borderRadius: 20, color: "white" }}>
+          Sum
+        </p>
+      </div>
       {pokemonList.map((obj) => {
         return (
           <Link
@@ -24,14 +35,24 @@ const PokemonList = () => {
               alt=""
             />
             <p
-              style={{ padding: 15, marginLeft: 20, borderRadius: 15, color: "white" }}
+              style={{
+                padding: 15,
+                marginLeft: 20,
+                borderRadius: 15,
+                color: "white",
+              }}
               className={obj.types[0]}
             >
               {obj.types[0][0].toUpperCase() + obj.types[0].slice(1)}
             </p>
             {obj.types[1] && (
               <p
-                style={{ padding: 15, marginLeft: 20, borderRadius: 15, color:"white" }}
+                style={{
+                  padding: 15,
+                  marginLeft: 20,
+                  borderRadius: 15,
+                  color: "white",
+                }}
                 className={obj.types[1]}
               >
                 {obj.types[1][0].toUpperCase() + obj.types[1].slice(1)}
