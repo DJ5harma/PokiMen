@@ -1,162 +1,52 @@
-* {
-  /* color: black; */
-  background-color: rgb(255, 225, 0);
+#list-div {
+  border: solid;
+  padding: 0 100px;
+  background-color: yellow;
 }
-@keyframes regularAnimation {
-  0%{
-  }
-  50%{
-    position: relative;
-    top: -500vh;
-    left: 220px;
-  }
-  100%{
-
-  }
-}
-#pokemon-list-container {
-  
-  animation: regularAnimation  5s ;
-  
-  position: relative;
-  top: 100px;
-  left: 220px;
+.list-item {
+  text-decoration: none;
   display: flex;
-  flex-direction: column;
-  width: 80vw;
+  align-items: center;
+  font-size: 25px;
+  padding: 0 0 0 40px;
+  /* border: solid; */
+  /* margin: 10px; */
+  box-shadow: 0 0 10px 4px red;
+  background-color: black;
+  color: white;
+
   cursor: pointer;
-  #info-tab{
-    background-color: black;
-    width: 77vw;
-    position: fixed;
-    top: 96px;
-    height: 40px;
-    border: solid white;
-    border-top: 0;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-    font-size: x-large;
-    z-index: 1;
-    cursor: default;
-    p{
-      background-color: black;
-    }
+
+  .item-img {
+    width: 100px;
+    height: 100px;
   }
-  .pokemon-item {
-
-
-    display: flex;
-    /* border: solid white; */
-    word-spacing: 10px;
-
-    align-items: center;
-    padding-left: 20px;
-    font-size: x-large;
-
-    margin: 0 0 15px 0;
-    border-radius: 20px;
-
-    min-height: 80px;
-    background-color: black;
-
-    box-shadow: 0 0 4px 4px red;
-
-    img {
-      background-color: black;
-    }
-    p {
-      background-color: black;
-    }
-    span {
-      padding: 12px;
-      border-radius: 15px;
-    }
-    .grass {
-      background-color: green;
-    }
-    .electric {
-      background-color: yellow;
-      color: black;
-    }
-    .poison {
-      background-color: purple;
-    }
-    .fire {
-      background-color: rgb(255, 136, 0);
-      color: black;
-    }
-    .fairy {
-      background-color: pink;
-      color: black;
-    }
-    .flying {
-      background-color: cornflowerblue;
-    }
-    .dragon {
-      background-color: blue;
-    }
-    .psychic {
-      background-color: hotpink;
-      color: black;
-    }
-    .ice {
-      background-color: rgb(165, 246, 246);
-      color: black;
-    }
-    .normal {
-      background-color: dimgray;
-    }
-    .rock {
-      background-color: darkgoldenrod;
-    }
-    .ground {
-      background-color: burlywood;
-      color: black;
-    }
-    .fighting {
-      background-color: brown;
-    }
-    .water {
-      /* color: black; */
-      background-color: dodgerblue;
-    }
-    .bug {
-      background-color: rgb(149, 233, 65);
-      color: black;
-    }
-    .dark {
-      background-color: rgb(46, 43, 43);
-    }
-    .steel {
-      background-color: rgb(186, 185, 185);
-      color: black;
-    }
-    .ghost {
-      background-color: rgb(97, 10, 97);
-    }
+  .name-id {
+    width: 180px;
   }
 }
-
-@keyframes itemAnimation {
-  100%{
-    margin: 0 20px;
-    padding: 10px 130px;
-    /* width: 10px; */
+@keyframes item-Ani {
+  0% {
+    margin: 0;
   }
-  /* 80%{
-    padding: 15px;
-  } */
-}
-#pokemon-list-container > #list-only > :hover {
+  100% {
+    margin: 15px 40px;
     background-color: white;
     color: black;
-    border-color: black;
-
-    p,img{
-      background-color: white;
-      color: black;
-    }
-    animation: itemAnimation 0.5s forwards;
+    border-radius: 20px;
+  }
+}
+#list-div > :hover {
+  animation: item-Ani forwards 0.5s;
+}
+.stats-div {
+  display: flex;
+  position: absolute;
+  right: 160px;
+  background-color: black;
+  padding: 20px;
+  border-radius: 40px;
+  p {
+    width: 60px;
+  }
 }

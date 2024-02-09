@@ -1,138 +1,62 @@
 import "./PokemonList.css";
 import pokemonList from "../assets/pokemonDB.json";
+import { Link } from "react-router-dom";
+import cartoonJumpMp3 from "../assets/cartoon-jump.mp3";
 
 const PokemonList = () => {
   return (
-    <div id="pokemon-list-container">
-      <div id="info-tab">
-        <p style={{ marginRight: 15 }}>iD</p>
-        <p style={{ marginRight: 90 }}>Name</p>
-        <p style={{ marginRight: 80 }}>Sprite</p>
-        <p>{"Type(s)"}</p>
-        <p style={{ position: "absolute", right: 80, wordSpacing: 40 }}>
-          HP Atk Def SpA SpD Total
-        </p>
-      </div>
-      <div style={{ marginTop: 50 }} id="list-only">
-        {pokemonList.map((pokemon) => {
-          return (
-            <div
-              className="pokemon-item"
-              key={pokemon.id}
-              style={{ marginRight: 22 }}
+    <div id="list-div">
+      {pokemonList.map((obj) => {
+        return (
+          <Link
+            to={`/pokemon/${obj.id}`}
+            className="list-item"
+            onMouseEnter={() => {
+              new Audio(cartoonJumpMp3).play();
+            }}
+          >
+            <p className="name-id">
+              {obj.id + "." + obj.name[0].toUpperCase() + obj.name.slice(1)}
+            </p>
+            <img
+              className="item-img"
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${obj.id}.png`}
+              alt=""
+            />
+            <p
+              style={{ padding: 15, marginLeft: 20, borderRadius: 15, color: "white" }}
+              className={obj.types[0]}
             >
-              <p style={{ width: 180 }}>
-                {pokemon.id}.{" "}
-                {pokemon.name &&
-                  pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
+              {obj.types[0][0].toUpperCase() + obj.types[0].slice(1)}
+            </p>
+            {obj.types[1] && (
+              <p
+                style={{ padding: 15, marginLeft: 20, borderRadius: 15, color:"white" }}
+                className={obj.types[1]}
+              >
+                {obj.types[1][0].toUpperCase() + obj.types[1].slice(1)}
               </p>
-              {/* Front Sprite */}
-              <img
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
-                alt=""
-              />
+            )}
 
-              {/* Types */}
-              <span style={{ margin: 10 }} className={pokemon.types[0]}>
-                {pokemon.types[0][0].toUpperCase() + pokemon.types[0].slice(1)}
-              </span>
-              {pokemon.types[1] && (
-                <span className={pokemon.types[1]}>
-                  {pokemon.types[1][0].toUpperCase() +
-                    pokemon.types[1].slice(1)}
-                </span>
-              )}
-              {/* Statsssssss */}
-              <div
-                className="stat-value"
-                style={{
-                  position: "absolute",
-                  right: 102,
-                  display: "flex",
-                  backgroundColor: "black",
-                  borderRadius: 20,
-                }}
-                >
-                <span
-                  style={{
-                    backgroundColor: "black",
-                    borderRadius: 20,
-                    padding: 10,
-                    fontFamily: "cursive",
-                    textDecorationLine:"underline"
-                  }}
-                >
-                  {pokemon.stats["special-defense"] +
-                    pokemon.stats.attack +
-                    pokemon.stats["special-attack"] +
-                    pokemon.stats.defense +
-                    pokemon.stats.hp}
-                </span>
-              </div>
-              <div
-                className="stat-value"
-                style={{
-                  position: "absolute",
-                  right: 204,
-                  backgroundColor: "black",
-                  padding: 10,
-                  borderRadius: 20,
-                }}
-              >
-                {pokemon.stats["special-defense"]}
-              </div>
-              <div
-                className="stat-value"
-                style={{
-                  position: "absolute",
-                  right: 290,
-                  backgroundColor: "black",
-                  padding: 10,
-                  borderRadius: 20,
-                }}
-              >
-                {pokemon.stats["special-attack"]}
-              </div>
-              <div
-                className="stat-value"
-                style={{
-                  position: "absolute",
-                  right: 380,
-                  backgroundColor: "black",
-                  padding: 10,
-                  borderRadius: 20,
-                }}
-              >
-                {pokemon.stats.defense}
-              </div>
-              <div
-                className="stat-value"
-                style={{
-                  position: "absolute",
-                  right: 464,
-                  backgroundColor: "black",
-                  padding: 10,
-                  borderRadius: 20,
-                }}
-              >
-                {pokemon.stats.attack}
-              </div>
-              <div
-                className="statvalue"
-                style={{
-                  position: "absolute",
-                  right: 544,
-                  backgroundColor: "black",
-                  padding: 10,
-                  borderRadius: 20,
-                }}
-              >
-                {pokemon.stats.hp}
-              </div>
+            <div className="stats-div">
+              <p style={{ color: "pink" }}>{obj.stats.hp}</p>
+              <p style={{ color: "orange" }}>{obj.stats.attack}</p>
+              <p style={{ color: "chartreuse" }}>{obj.stats.defense}</p>
+              <p style={{ color: "hotpink" }}>{obj.stats["special-attack"]}</p>
+              <p style={{ color: "cyan" }}>{obj.stats["special-defense"]}</p>
+              <p style={{ color: "yellow" }}>{obj.stats.speed}</p>
+              <p style={{ paddingLeft: 10, borderRadius: 20, color: "white" }}>
+                {obj.stats.speed +
+                  obj.stats.hp +
+                  obj.stats.defense +
+                  obj.stats.attack +
+                  obj.stats["special-attack"] +
+                  obj.stats["special-defense"]}
+              </p>
             </div>
-          );
-        })}
-      </div>
+          </Link>
+        );
+      })}
     </div>
   );
 };
