@@ -12,7 +12,6 @@ const Pkmn = () => {
     `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${id}.ogg`
   );
 
-  
   const imgSample = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/`;
   const img = `${imgSample + id}.png`;
   const imgNext = `${imgSample + (id + 1)}.png`;
@@ -32,10 +31,8 @@ const Pkmn = () => {
         <Link
           to={`/pokemon/${id - 1}`}
           id="prev-div"
-          className={dbPrev.types[0]+"-s"}
-          onMouseEnter={() => {
-            new Audio(cartoonJumpMp3).play();
-          }}
+          className={dbPrev.types[0] + "-s"}
+          onMouseEnter={() => new Audio(cartoonJumpMp3).play()}
           style={{ textDecoration: "none", color: "black" }}
         >
           <p>{dbPrev.name[0].toUpperCase() + dbPrev.name.slice(1)}</p>
@@ -71,13 +68,13 @@ const Pkmn = () => {
             </button>
           )}
         </div>
-        <Stats dbCurr={dbCurr}/>
+        <Stats dbCurr={dbCurr} />
       </div>
       {id < 1302 && (
         <Link
           to={`/pokemon/${id + 1}`}
           id="next-div"
-          className={dbNext.types[0]+"-s"}
+          className={dbNext.types[0] + "-s"}
           onMouseEnter={() => {
             new Audio(cartoonJumpMp3).play();
           }}
