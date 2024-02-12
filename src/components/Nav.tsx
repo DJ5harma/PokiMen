@@ -30,7 +30,7 @@ const Nav = () => {
 
   useEffect(() => {
     bgM.play();
-  }, []);
+  }, [bgM]);
 
   return (
     <nav id="nav">
