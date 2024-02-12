@@ -29,7 +29,7 @@ const Nav = () => {
   }
 
   useEffect(() => {
-    // bgM.play();
+    bgM.play();
   }, []);
 
   return (
