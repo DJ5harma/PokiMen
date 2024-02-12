@@ -118,58 +118,58 @@
     }
   }
   
-  .grass-s {
+  .Grass-s {
     box-shadow: 0 0 1000px 50px rgb(1, 202, 1);
   }
-  .electric-s {
+  .Electric-s {
     box-shadow: 0 0 1000px 50px yellow;
   }
-  .poison-s {
+  .Poison-s {
     box-shadow: 0 0 1000px 50px purple;
   }
-  .fire-s {
+  .Fire-s {
     box-shadow: 0 0 1000px 50px rgb(255, 136, 0);
   }
-  .fairy-s {
+  .Fairy-s {
     box-shadow: 0 0 1000px 50px pink;
   }
-  .flying-s {
+  .Flying-s {
     box-shadow: 0 0 1000px 50px cornflowerblue;
   }
-  .dragon-s {
+  .Dragon-s {
     box-shadow: 0 0 1000px 50px blue;
   }
-  .psychic-s {
+  .Psychic-s {
     box-shadow: 0 0 1000px 50px hotpink;
   }
-  .ice-s {
+  .Ice-s {
     box-shadow: 0 0 1000px 50px rgb(165, 246, 246);
   }
-  .normal-s {
+  .Normal-s {
     box-shadow: 0 0 1000px 50px dimgray;
   }
-  .rock-s {
+  .Rock-s {
     box-shadow: 0 0 1000px 50px darkgoldenrod;
   }
-  .ground-s {
+  .Ground-s {
     box-shadow: 0 0 1000px 50px burlywood;
   }
-  .fighting-s {
+  .Fighting-s {
     box-shadow: 0 0 1000px 50px brown;
   }
-  .water-s {
+  .Water-s {
     box-shadow: 0 0 1000px 50px dodgerblue;
   }
-  .bug-s {
+  .Bug-s {
     box-shadow: 0 0 1000px 50px rgb(149, 233, 65);
   }
-  .dark-s {
+  .Dark-s {
     box-shadow: 0 0 1000px 50px rgb(46, 43, 43);
   }
-  .steel-s {
+  .Steel-s {
     box-shadow: 0 0 1000px 50px rgb(186, 185, 185);
   }
-  .ghost-s {
+  .Ghost-s {
     box-shadow: 0 0 1000px 50px rgb(97, 10, 97);
   }
   

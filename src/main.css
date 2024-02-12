@@ -5,60 +5,60 @@
   font-family: monospace;
 }
 
-.grass {
+.Grass {
   background-color: green;
 }
-.electric {
+.Electric {
   background-color: rgba(199, 199, 18, 0.996);
   color: black;
 }
-.poison {
+.Poison {
   background-color: purple;
 }
-.fire {
+.Fire {
   background-color: rgb(255, 136, 0);
   color: black;
 }
-.fairy {
+.Fairy {
   background-color: rgb(239, 133, 151);
   color: black;
 }
-.flying {
+.Flying {
   background-color: cornflowerblue;
 }
-.dragon {
+.Dragon {
   background-color: blue;
 }
-.psychic {
+.Psychic {
   background-color: hotpink;
 }
-.ice {
+.Ice {
   background-color: rgb(84, 182, 182);
 }
-.normal {
+.Normal {
   background-color: rgb(181, 150, 121);
 }
-.rock {
+.Rock {
   background-color: darkgoldenrod;
 }
-.ground {
+.Ground {
   background-color: rgb(187, 144, 88);
 }
-.fighting {
+.Fighting {
   background-color: brown;
 }
-.water {
+.Water {
   background-color: dodgerblue;
 }
-.bug {
+.Bug {
   background-color: rgb(106, 174, 38);
 }
-.dark {
+.Dark {
   background-color: rgb(46, 43, 43);
 }
-.steel {
+.Steel {
   background-color: rgb(186, 185, 185);
 }
-.ghost {
+.Ghost {
   background-color: rgb(97, 10, 97);
 }
