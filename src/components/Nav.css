@@ -1,0 +1,23 @@
+#nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    .nav-btn{
+        color: white;
+        background-color: black;
+        border: 4px solid rebeccapurple;
+        text-decoration: none;
+        font-size: x-large;
+        padding: 15px;
+        border-radius: 40px;
+        cursor: pointer;
+    }
+    .nav-btn:hover{
+        background-color: white;
+        color: black;
+    }
+    #logo{
+        font-size: 35px;        
+    }
+}

@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import bgMusicFile from "../assets/Littleroot Town.mp3";
+import buttonSound from "../assets/button-sound.mp3";
+import notificationSound from "../assets/notification-sound.mp3";
 import { useEffect } from "react";
+import "./Nav.css";
 const Nav = () => {
   const bgM = new Audio(bgMusicFile);
+  const btnSound = new Audio(buttonSound);
+  const notiSound = new Audio(notificationSound);
   function handlePause() {
     if (bgM.paused) {
       bgM.play();
@@ -11,83 +16,57 @@ const Nav = () => {
     }
   }
   useEffect(() => {
-    bgM.play();
+    // bgM.play();
   }, []);
 
   return (
-    <div id="nav">
-      <nav
-        id="top-nav"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: 100,
-        }}
-      >
-        <h1
-          style={{
-            fontFamily: "monospace",
-            fontSize: "35px",
-            position: "fixed",
-            backgroundColor: "white",
-            zIndex: 2,
-            padding: "33px 30vw",
-            borderBottom: "solid",
-          }}
-        >
-          The PokiMen Project
-        </h1>
-      </nav>
-
-      <button
+    <nav id="nav">
+      <p
         onClick={handlePause}
-        style={{
-          right: -10,
-          top: -10,
-
-          borderRadius: "0 0 0 80px",
-        }}
         className="nav-btn"
+        onMouseEnter={() => notiSound.play()}
+        onMouseLeave={() => {
+          notiSound.pause();
+          notiSound.currentTime = 0;
+        }}
       >
-        Toggle Bg Music
-      </button>
-      <Link to={"/pokemon-list"}>
-        <button
-          style={{
-            left: -10,
-            top: -10,
-            borderRadius: "0 0 80px 0",
-          }}
-          className="nav-btn"
-        >
-          Goto List-View
-        </button>
-      </Link>
-      <button
-        style={{
-          left: -10,
-          bottom: -10,
-          borderRadius: "0 80px 0 0",
-          cursor: "not-allowed"
-        }}
+        Toggle Music
+      </p>
+      <Link
+        to={"/pokemon-list"}
         className="nav-btn"
+        onMouseEnter={() => notiSound.play()}
+        onMouseLeave={() => {
+          notiSound.pause();
+          notiSound.currentTime = 0;
+        }}
+      >
+        Goto List
+      </Link>
+      <h1 id="logo">The PokiMen Project</h1>
+      <Link
+        to={"/about"}
+        className="nav-btn"
+        onMouseEnter={() => notiSound.play()}
+        onMouseLeave={() => {
+          notiSound.pause();
+          notiSound.currentTime = 0;
+        }}
       >
         toBeImplimented
-      </button>
-      <Link to={"/about"}>
-        <button
-          style={{
-            right: -10,
-            bottom: -10,
-            borderRadius: "80px 0 0 0",
-          }}
-          className="nav-btn"
-        >
-          About
-        </button>
       </Link>
-    </div>
+      <Link
+        to={"/about"}
+        className="nav-btn"
+        onMouseEnter={() => notiSound.play()}
+        onMouseLeave={() => {
+          notiSound.pause();
+          notiSound.currentTime = 0;
+        }}
+      >
+        AboutMe
+      </Link>
+    </nav>
   );
 };
 

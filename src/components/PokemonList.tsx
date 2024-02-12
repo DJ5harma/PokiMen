@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import cartoonJumpMp3 from "../assets/cartoon-jump.mp3";
 
 const PokemonList = () => {
+  const wooshSound = new Audio(cartoonJumpMp3);
   return (
     <div id="list-div">
       <div id="stat-ref-tab">
@@ -20,7 +21,11 @@ const PokemonList = () => {
           <Link
             to={`/pokemon/${obj.id}`}
             className="list-item"
-            onMouseEnter={() => new Audio(cartoonJumpMp3).play()}
+            onMouseEnter={() => wooshSound.play()}
+            onMouseLeave={()=>{
+              wooshSound.pause();
+              wooshSound.currentTime = 0;
+            }}
           >
             <p className="name-id">
               {obj.id + "." + obj.name[0].toUpperCase() + obj.name.slice(1)}
@@ -62,7 +67,7 @@ const PokemonList = () => {
               <p style={{ color: "hotpink" }}>{obj.stats["special-attack"]}</p>
               <p style={{ color: "cyan" }}>{obj.stats["special-defense"]}</p>
               <p style={{ color: "yellow" }}>{obj.stats.speed}</p>
-              <p style={{ paddingLeft: 10, borderRadius: 20, color: "white" }}>
+              <p style={{ color: "white" }}>
                 {obj.stats.speed +
                   obj.stats.hp +
                   obj.stats.defense +

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import DB from "../assets/pokemonDB.json";
+import "./Pkmn.css"
 
 import cartoonJumpMp3 from "../assets/cartoon-jump.mp3";
 import speakerIconImg from "../assets/speaker-icon.png";
