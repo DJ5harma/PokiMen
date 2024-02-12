@@ -22,14 +22,12 @@ const PokemonList = () => {
             to={`/pokemon/${obj.id}`}
             className="list-item"
             onMouseEnter={() => wooshSound.play()}
-            onMouseLeave={()=>{
+            onMouseLeave={() => {
               wooshSound.pause();
               wooshSound.currentTime = 0;
             }}
           >
-            <p className="name-id">
-              {obj.id + "." + obj.name[0].toUpperCase() + obj.name.slice(1)}
-            </p>
+            <p className="name-id">{obj.id + "." + obj.name}</p>
             <img
               className="item-img"
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${obj.id}.png`}
@@ -44,7 +42,7 @@ const PokemonList = () => {
               }}
               className={obj.types[0]}
             >
-              {obj.types[0][0].toUpperCase() + obj.types[0].slice(1)}
+              {obj.types[0]}
             </p>
             {obj.types[1] && (
               <p
@@ -56,7 +54,7 @@ const PokemonList = () => {
                 }}
                 className={obj.types[1]}
               >
-                {obj.types[1][0].toUpperCase() + obj.types[1].slice(1)}
+                {obj.types[1]}
               </p>
             )}
 

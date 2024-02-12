@@ -87,8 +87,7 @@ const Pkmn = () => {
           <h1 style={{ fontFamily: "monospace" }}>
             {dbCurr.id +
               "." +
-              dbCurr.name[0].toUpperCase() +
-              dbCurr.name.slice(1)}
+              dbCurr.name}
           </h1>
           <img
             id="speaker-icon"
