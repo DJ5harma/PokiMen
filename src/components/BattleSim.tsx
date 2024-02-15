@@ -7,6 +7,8 @@ const BattleSim = () => {
 
       <span>Pokemon 1: </span>
       <span>Pokemon 2: </span>
+
+      <h1>To Be Implemented</h1>
     </div>
   );
 };
