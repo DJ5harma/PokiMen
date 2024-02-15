@@ -1,6 +1,13 @@
 const About = () => {
   return (
-    <div style={{ position: "relative", top: 10, left: 20, margin:"10px" }}>
+    <div
+      style={{
+        position: "relative",
+        top: "10vh",
+        left: "200px",
+        margin: "10px",
+      }}
+    >
       <h3 style={{ fontSize: 50, marginTop: 40 }}>
         Hi! its Dhananjay, aka Sunu Sharma.
       </h3>
@@ -9,13 +16,17 @@ const About = () => {
         projects!
       </p>
       <p style={{ fontSize: 30, marginTop: 40 }}>
-        E-mail here for feedbacks__ 
+        E-mail here for feedbacks__
         <a href="mailto:sunubhargav2004@gmail.com">sunubhargav2004@gmail.com</a>
-        <p>__________GitHub___________
-            <a href="https://github.com/DJ5harma/">https://github.com/DJ5harma</a>
+        <p>
+          __________GitHub___________
+          <a href="https://github.com/DJ5harma/">https://github.com/DJ5harma</a>
         </p>
-        <p>_________LinkedIn__________
-            <a href="https://www.linkedin.com/in/dhananjay-sharma-016550254/">https://www.linkedin.com/in/dhananjay-sharma-016550254/</a>
+        <p>
+          _________LinkedIn__________
+          <a href="https://www.linkedin.com/in/dhananjay-sharma-016550254/">
+            https://www.linkedin.com/in/dhananjay-sharma-016550254/
+          </a>
         </p>
       </p>
     </div>

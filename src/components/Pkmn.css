@@ -1,10 +1,12 @@
 #pokemon-view {
-    margin: 0 90px;
+  /* border: solid black; */
+
+    margin: 10vh 30px 0 210px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 40px;
+    top: 10vh;
   
     image-rendering: pixelated;
     #main-div {

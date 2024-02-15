@@ -1,7 +1,11 @@
 #list-div {
   border: solid;
-  padding: 30px 100px;
+  padding: 50px 200px 0 100px;
   background-color: yellow;
+
+  position: relative;
+  top: 10vh;
+  left: 140px;
 }
 .list-item {
   text-decoration: none;
@@ -9,10 +13,13 @@
   align-items: center;
   font-size: 25px;
   padding: 0 0 0 50px;
+  margin-bottom: 5px;
+  /* border: 4px solid; */
   
-  border-radius: 130px 20px;
-  box-shadow: 0 0 10px 4px red;
+  border-radius: 40px 130px 130px 200px;
+  box-shadow: 0 0 10px 4px rgb(255, 0, 0);
   background-color: black;
+  /* border: solid black 2px; */
   color: white;
 
   cursor: pointer;
@@ -42,7 +49,7 @@
 .stats-div {
   display: flex;
   position: absolute;
-  right: 160px;
+  right: 310px;
   background-color: black;
   padding: 20px 20px 20px 32px;
   border-radius: 40px;
@@ -54,7 +61,7 @@
     display: flex;
     position: fixed;
     top: 110px;
-    right: 182px;
+    right: 192px;
     z-index: 1;
     justify-content: space-between;
     background-color: black;

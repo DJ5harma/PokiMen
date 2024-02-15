@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import DB from "../assets/pokemonDB.json";
-import "./Pkmn.css"
+import "./Pkmn.css";
 
 import cartoonJumpMp3 from "../assets/cartoon-jump.mp3";
 import speakerIconImg from "../assets/speaker-icon.png";
@@ -85,9 +85,7 @@ const Pkmn = () => {
       <div id="main-div">
         <div style={{ display: "flex", alignItems: "center" }}>
           <h1 style={{ fontFamily: "monospace" }}>
-            {dbCurr.id +
-              "." +
-              dbCurr.name}
+            {dbCurr.id + "." + dbCurr.name}
           </h1>
           <img
             id="speaker-icon"
@@ -125,6 +123,9 @@ const Pkmn = () => {
           <p>{dbNext.name[0].toUpperCase() + dbNext.name.slice(1)}</p>
         </Link>
       )}
+      <div id="move-list">
+
+      </div>
     </div>
   );
 };

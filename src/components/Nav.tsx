@@ -15,6 +15,7 @@ const Nav = () => {
       return;
     }
     bgM.pause();
+    // setBgmInfo("OFF")
   }
   function handleMouseEnter() {
     notiSound.play();
@@ -34,15 +35,19 @@ const Nav = () => {
 
   return (
     <nav id="nav">
+      <div id="logo-div">
+        <h1 id="logo">The PokiMen Project</h1>
+      </div>
       <p
         onClick={handlePause}
         className="nav-btn"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        Toggle Music
+        bgMusic
       </p>
       <Link
+        state={{ battleSim: false }}
         to={"/pokemon-list"}
         onClick={handleBtnClickSound}
         className="nav-btn"
@@ -51,17 +56,16 @@ const Nav = () => {
       >
         Goto List
       </Link>
-      <h1 id="logo">The PokiMen Project</h1>
-      <p
-        // to={"/about"}
+      <Link
+        state={{ battleSim: true }}
+        to={"/battle-simulator"}
         className="nav-btn"
-        // onClick={handleBtnClickSound}
-        // onMouseEnter={handleMouseEnter}
-        // onMouseLeave={handleMouseLeave}
-        style={{cursor: "not-allowed"}}
+        onClick={handleBtnClickSound}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
-        ToBeImplimented
-      </p>
+        Battle!
+      </Link>
       <Link
         to={"/about"}
         className="nav-btn"
@@ -71,6 +75,7 @@ const Nav = () => {
       >
         AboutMe
       </Link>
+      {/* <div id="searchBar"></div> */}
     </nav>
   );
 };

@@ -20,7 +20,8 @@ const PokemonList = () => {
         return (
           <Link
             to={`/pokemon/${obj.id}`}
-            className="list-item"
+            className={`list-item ${obj.types[0]}`}
+            // style={{boxShadow: "0 0 20px"}}
             onMouseEnter={() => wooshSound.play()}
             onMouseLeave={() => {
               wooshSound.pause();
@@ -39,6 +40,7 @@ const PokemonList = () => {
                 marginLeft: 20,
                 borderRadius: 15,
                 color: "white",
+                // border: "solid black"
               }}
               className={obj.types[0]}
             >
@@ -46,11 +48,12 @@ const PokemonList = () => {
             </p>
             {obj.types[1] && (
               <p
-                style={{
-                  padding: 15,
-                  marginLeft: 20,
-                  borderRadius: 15,
-                  color: "white",
+              style={{
+                padding: 15,
+                marginLeft: 20,
+                borderRadius: 15,
+                color: "white",
+                // border: "solid black"
                 }}
                 className={obj.types[1]}
               >
@@ -66,12 +69,7 @@ const PokemonList = () => {
               <p style={{ color: "cyan" }}>{obj.stats["special-defense"]}</p>
               <p style={{ color: "yellow" }}>{obj.stats.speed}</p>
               <p style={{ color: "white" }}>
-                {obj.stats.speed +
-                  obj.stats.hp +
-                  obj.stats.defense +
-                  obj.stats.attack +
-                  obj.stats["special-attack"] +
-                  obj.stats["special-defense"]}
+                {obj.stats.total}
               </p>
             </div>
           </Link>

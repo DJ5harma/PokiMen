@@ -3,6 +3,7 @@ import PokemonList from "./components/PokemonList";
 import Pkmn from "./components/Pkmn";
 import Nav from "./components/Nav";
 import About from "./components/About";
+import BattleSim from "./components/BattleSim";
 // import bgImg from "./assets/bgImg.jpg"
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route index element={<Navigate to="/pokemon/25" replace />} />
           <Route path="/pokemon/:id" element={<Pkmn />} />
           <Route path="/pokemon-list" element={<PokemonList />} />
+          <Route path="/battle-simulator" element={<BattleSim />} />
           <Route path="/about" element={<About />} />
         </Route>
       </Routes>
