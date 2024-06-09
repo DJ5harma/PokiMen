@@ -13,42 +13,42 @@ export default function MappedList({
 	rangeEnd: number;
 }) {
 	return (
-		<div className="flex-col gap-2">
+		<div className="flex-col gap-1">
 			{DB.filter(({ id }) => id >= rangeStart && id <= rangeEnd).map(
 				({ id, name, types, stats }) => {
 					return (
-						<Link to={`/pokemon/${id}`} key={id}>
-							<div
-								className="items-center border gap-4 justify-around"
-								style={{
-									backgroundImage: `linear-gradient(to right, ${
-										typeColors[types[0]].color
-									}, ${
-										types.length === 2
-											? typeColors[types[1]].color
-											: typeColors[types[0]].color
-									})`,
-									height: isMobile ? 100 : 80,
-									padding: isMobile ? 10 : 25,
-								}}
-							>
-								<ListPokemonIdAndImage
-									id={id}
-									name={name}
-									types={types}
-								/>
-								<ListPokemonTypes types={types} />
-								<div>
-									{Object.entries(stats).map(([key, val]) => (
-										<div
-											key={key}
-											className="items-center border bg-neutral-100 p-1"
-										>
-											<p className="w-5">{val}</p>
-											{/* <p>{key.toLocaleUpperCase()}</p> */}
-										</div>
-									))}
-								</div>
+						<Link
+							to={`/pokemon/${id}`}
+							key={id}
+							className="flex items-center border justify-around"
+							style={{
+								backgroundImage: `linear-gradient(to right, ${
+									typeColors[types[0]].color
+								}, ${
+									types.length === 2
+										? typeColors[types[1]].color
+										: typeColors[types[0]].color
+								})`,
+								height: isMobile ? 100 : 80,
+								// padding: isMobile ? 10 : 25,
+							}}
+						>
+							<ListPokemonIdAndImage
+								id={id}
+								name={name}
+								types={types}
+							/>
+							<ListPokemonTypes types={types} />
+							<div>
+								{Object.entries(stats).map(([key, val]) => (
+									<div
+										key={key}
+										className="items-center border bg-neutral-100 p-1"
+									>
+										<p className="w-5">{val}</p>
+										{/* <p>{key.toLocaleUpperCase()}</p> */}
+									</div>
+								))}
 							</div>
 						</Link>
 					);

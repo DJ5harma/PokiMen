@@ -9,7 +9,7 @@ function App() {
 	return (
 		<div className="w-full h-full flex-col">
 			<Nav />
-			<div className="py-8 my-8">
+			<div className="pt-8 mt-8">
 				<Routes>
 					<Route
 						index

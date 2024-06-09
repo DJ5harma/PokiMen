@@ -1,6 +1,6 @@
 export default function ListStatBar() {
 	return (
-		<div className="gap-4 [&>*]:border-2 [&>*]:p-2">
+		<div className="w-full justify-end [&>*]:border-2 [&>*]:p-2">
 			<p>HP</p>
 			<p>ATK</p>
 			<p>DEF</p>

@@ -31,47 +31,43 @@ export default function PkmnList() {
 
 	return (
 		<div className="w-full flex-col">
-			<div className="w-full px-6 justify-between my-2 items-center">
-				<div>
-					<button
-						className="border-2 border-black p-3"
-						onClick={() => {
-							const diff = rangeEnd - rangeStart;
-							if (rangeStart - diff < 0)
-								navigate(`/pokemon-list/0-${diff}`);
-							else
-								navigate(
-									`/pokemon-list/${rangeStart - diff}-${
-										rangeEnd - diff
-									}`
-								);
-							invertFlicker(!flicker);
-						}}
-					>
-						{"<"} Previous Portion
-					</button>
-					<button
-						className="border-2 border-black p-3"
-						onClick={() => {
-							const diff = rangeEnd - rangeStart;
-							if (rangeEnd + diff > DB.length)
-								navigate(
-									`/pokemon-list/${DB.length - diff}-${
-										DB.length
-									}`
-								);
-							else
-								navigate(
-									`/pokemon-list/${rangeStart + diff}-${
-										rangeEnd + diff
-									}`
-								);
-							invertFlicker(!flicker);
-						}}
-					>
-						Next Portion {">"}
-					</button>
-				</div>
+			<div className="w-full px-6 gap-2 my-2 items-center">
+				<button
+					className="border-2 border-black p-3"
+					onClick={() => {
+						const diff = rangeEnd - rangeStart;
+						if (rangeStart - diff < 0)
+							navigate(`/pokemon-list/0-${diff}`);
+						else
+							navigate(
+								`/pokemon-list/${rangeStart - diff}-${
+									rangeEnd - diff
+								}`
+							);
+						invertFlicker(!flicker);
+					}}
+				>
+					{"<"} Previous Portion
+				</button>
+				<button
+					className="border-2 border-black p-3"
+					onClick={() => {
+						const diff = rangeEnd - rangeStart;
+						if (rangeEnd + diff > DB.length)
+							navigate(
+								`/pokemon-list/${DB.length - diff}-${DB.length}`
+							);
+						else
+							navigate(
+								`/pokemon-list/${rangeStart + diff}-${
+									rangeEnd + diff
+								}`
+							);
+						invertFlicker(!flicker);
+					}}
+				>
+					Next Portion {">"}
+				</button>
 				<ListStatBar />
 			</div>
 			<MappedList rangeStart={rangeStart} rangeEnd={rangeEnd} />
