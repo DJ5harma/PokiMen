@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import MappedList from "../components/MappedList";
 import { useEffect, useState } from "react";
 import DB from "../assets/pokemonDB.json";
-import ListStatBar from "../components/ListStatBar";
 
 export default function PkmnList() {
 	const [rangeStart, setRangeStart] = useState(0);
@@ -29,6 +28,9 @@ export default function PkmnList() {
 		}
 	}, [flicker]);
 
+	const [storeInput, setStoreInput] = useState("");
+	const [query, setQuery] = useState("");
+
 	return (
 		<div className="w-full flex-col">
 			<div className="w-full px-6 gap-2 my-2 items-center">
@@ -47,7 +49,7 @@ export default function PkmnList() {
 						invertFlicker(!flicker);
 					}}
 				>
-					{"<"} Previous Portion
+					{"<"} Prev
 				</button>
 				<button
 					className="border-2 border-black p-3"
@@ -66,11 +68,38 @@ export default function PkmnList() {
 						invertFlicker(!flicker);
 					}}
 				>
-					Next Portion {">"}
+					Next {">"}
 				</button>
-				<ListStatBar />
+				<div>
+					<input
+						type="text"
+						placeholder="Enter id/name/type"
+						value={storeInput}
+						className="border-2 border-black p-2"
+						onChange={(e) => setStoreInput(e.target.value)}
+					/>
+					<button
+						className="border-2 px-4"
+						onClick={() => {
+							setStoreInput("");
+							setQuery("");
+						}}
+					>
+						X
+					</button>
+					<button
+						className="border-2 px-4"
+						onClick={() => setQuery(storeInput)}
+					>
+						Q
+					</button>
+				</div>
 			</div>
-			<MappedList rangeStart={rangeStart} rangeEnd={rangeEnd} />
+			<MappedList
+				rangeStart={rangeStart}
+				rangeEnd={rangeEnd}
+				query={query}
+			/>
 		</div>
 	);
 }
