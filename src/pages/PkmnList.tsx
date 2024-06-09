@@ -33,7 +33,7 @@ export default function PkmnList() {
 
 	return (
 		<div className="w-full flex-col">
-			<div className="w-full px-6 gap-2 my-2 items-center">
+			<div className="w-full px-2 gap-4 my-2 items-center">
 				<button
 					className="border-2 border-black p-3"
 					onClick={() => {
@@ -50,25 +50,6 @@ export default function PkmnList() {
 					}}
 				>
 					{"<"} Prev
-				</button>
-				<button
-					className="border-2 border-black p-3"
-					onClick={() => {
-						const diff = rangeEnd - rangeStart;
-						if (rangeEnd + diff > DB.length)
-							navigate(
-								`/pokemon-list/${DB.length - diff}-${DB.length}`
-							);
-						else
-							navigate(
-								`/pokemon-list/${rangeStart + diff}-${
-									rangeEnd + diff
-								}`
-							);
-						invertFlicker(!flicker);
-					}}
-				>
-					Next {">"}
 				</button>
 				<div>
 					<input
@@ -94,6 +75,25 @@ export default function PkmnList() {
 						Q
 					</button>
 				</div>
+				<button
+					className="border-2 border-black p-3"
+					onClick={() => {
+						const diff = rangeEnd - rangeStart;
+						if (rangeEnd + diff > DB.length)
+							navigate(
+								`/pokemon-list/${DB.length - diff}-${DB.length}`
+							);
+						else
+							navigate(
+								`/pokemon-list/${rangeStart + diff}-${
+									rangeEnd + diff
+								}`
+							);
+						invertFlicker(!flicker);
+					}}
+				>
+					Next {">"}
+				</button>
 			</div>
 			<MappedList
 				rangeStart={rangeStart}
