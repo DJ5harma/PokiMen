@@ -1,25 +1,32 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import PokemonList from "./components/PokemonList";
-import Pkmn from "./components/Pkmn";
 import Nav from "./components/Nav";
-import About from "./components/About";
-import BattleSim from "./components/BattleSim";
-// import bgImg from "./assets/bgImg.jpg"
+import Pkmn from "./pages/Pkmn";
+import PkmnList from "./pages/PkmnList";
+import NotFound from "./pages/NotFound";
+import About from "./pages/About";
+
 function App() {
-  return (
-    <>
-      <Nav />
-      <Routes>
-        <Route path="/">
-          <Route index element={<Navigate to="/pokemon/25" replace />} />
-          <Route path="/pokemon/:id" element={<Pkmn />} />
-          <Route path="/pokemon-list" element={<PokemonList />} />
-          <Route path="/battle-simulator" element={<BattleSim />} />
-          <Route path="/about" element={<About />} />
-        </Route>
-      </Routes>
-    </>
-  );
+	return (
+		<div className="w-full h-full flex-col">
+			<Nav />
+			<div className="py-8 my-8">
+				<Routes>
+					<Route
+						index
+						element={<Navigate to="/pokemon/25" replace />}
+					/>
+					<Route path="/pokemon/:id" element={<Pkmn />} />
+					<Route
+						path="/pokemon-list"
+						element={<Navigate to="/pokemon-list/0-15" replace />}
+					/>
+					<Route path="/pokemon-list/:range" element={<PkmnList />} />
+					<Route path="/about" element={<About />} />
+					<Route path="*" element={<NotFound />} />
+				</Routes>
+			</div>
+		</div>
+	);
 }
 
 export default App;

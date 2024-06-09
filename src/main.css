@@ -1,64 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: monospace;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: monospace;
+	image-rendering: pixelated;
+}
+div {
+	display: flex;
+	border-color: black;
 }
 
-.Grass {
-  background-color: green;
+@keyframes scaleUp {
+	100% {
+		width: 20vw;
+		height: 20vw;
+	}
 }
-.Electric {
-  background-color: rgba(199, 199, 18, 0.996);
-  color: black;
+.pkmnPageImage:hover {
+	animation: scaleUp 0.5s forwards;
 }
-.Poison {
-  background-color: purple;
+@keyframes scaleDown {
+	100% {
+		width: 20vw;
+		height: 20vw;
+	}
 }
-.Fire {
-  background-color: rgb(255, 136, 0);
-  color: black;
-}
-.Fairy {
-  background-color: rgb(239, 133, 151);
-  color: black;
-}
-.Flying {
-  background-color: cornflowerblue;
-}
-.Dragon {
-  background-color: blue;
-}
-.Psychic {
-  background-color: hotpink;
-}
-.Ice {
-  background-color: rgb(84, 182, 182);
-}
-.Normal {
-  background-color: rgb(181, 150, 121);
-}
-.Rock {
-  background-color: darkgoldenrod;
-}
-.Ground {
-  background-color: rgb(187, 144, 88);
-}
-.Fighting {
-  background-color: brown;
-}
-.Water {
-  background-color: dodgerblue;
-}
-.Bug {
-  background-color: rgb(106, 174, 38);
-}
-.Dark {
-  background-color: rgb(46, 43, 43);
-}
-.Steel {
-  background-color: rgb(186, 185, 185);
-}
-.Ghost {
-  background-color: rgb(97, 10, 97);
+.d:hover {
+	animation: scaleDown 0.5s forwards;
 }
