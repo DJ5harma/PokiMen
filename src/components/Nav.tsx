@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { bgM, clickSound } from "../utils";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Nav() {
 	useEffect(() => {
@@ -11,8 +11,13 @@ export default function Nav() {
 
 	return (
 		<div className="fixed bg-white border-2 p-2 h-16 w-full text-white text-base justify-around [&>*]:rounded-xl [&>*]:bg-black [&>*]:px-3">
-			<button onClick={() => clickSound.play()}>
-				<Link to="/">PokiMen</Link>
+			<button
+				onClick={() => {
+					clickSound.play();
+					navigate("/");
+				}}
+			>
+				PokiMen
 			</button>
 			<button
 				onClick={() => {
@@ -33,8 +38,13 @@ export default function Nav() {
 			>
 				Toggle BgM
 			</button>
-			<button onClick={() => clickSound.play()}>
-				<Link to="/about">About</Link>
+			<button
+				onClick={() => {
+					clickSound.play();
+					navigate("/about");
+				}}
+			>
+				About
 			</button>
 		</div>
 	);
