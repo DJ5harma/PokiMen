@@ -30,7 +30,6 @@ export default function MappedList({
 										: typeColors[types[0]].color
 								})`,
 								height: isMobile ? 100 : 80,
-								// padding: isMobile ? 10 : 25,
 							}}
 						>
 							<ListPokemonIdAndImage

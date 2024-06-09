@@ -1,5 +1,6 @@
 import scaleUpAudio from "./assets/cartoon-jump.mp3";
 import backgroundMusic from "./assets/Littleroot Town.mp3";
+import notificationSound from "./assets/notification-sound.mp3";
 
 export const pokemonImage = (id: number) => {
 	return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
@@ -11,6 +12,7 @@ export const pokemonCry = (id: number) => {
 };
 export const scaleUpSound = new Audio(scaleUpAudio);
 export const bgM = new Audio(backgroundMusic);
+export const clickSound = new Audio(notificationSound);
 
 export const typeColors: {
 	[key: string]: { textColor: string; color: string };
